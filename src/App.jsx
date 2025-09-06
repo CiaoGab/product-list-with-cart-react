@@ -122,7 +122,7 @@ function App() {
           </div>
           <button
             onClick={confirmOrder}
-            className="w-full bg-red-600 p-4 rounded-full text-white text-lg font-semibold"
+            className="w-full bg-red-600 hover:bg-red-800 p-4 rounded-full text-white text-lg font-semibold"
           >
             Confirm Order
           </button>
