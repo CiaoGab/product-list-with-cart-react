@@ -18,14 +18,14 @@ function App() {
           {isAdded ? (
             <div className="max-w-[160px] mx-auto flex -m-3 bg-red-700 text-white rounded-full px-5 py-2 cursor-pointer border border-stone-500 justify-between w-full">
               <button
-                onClick={() => decrement(item)}
+                onClick={() => decrement(isAdded)}
                 className="border border-white rounded-full h-6 w-6 flex justify-center items-center"
               >
                 -
               </button>
               <p>{isAdded.quantity}</p>
               <button
-                onClick={() => increment(item)}
+                onClick={() => increment(isAdded)}
                 className="border border-white rounded-full h-6 w-6 flex justify-center items-center"
               >
                 +
@@ -42,7 +42,7 @@ function App() {
               Add to Cart
             </button>
           )}
-          <div>
+          <div className="mt-6">
             <span className="text-orange-950 text-sm">{item.category}</span>
             <h2 className="text-lg">{item.name}</h2>
             <p className="text-red-600 font-semibold text-lg">{`$${item.price.toFixed(
@@ -181,11 +181,17 @@ function App() {
   }
 
   return (
-    <div className="bg-stone-100 p-6 font-text  flex flex-col">
-      <main className="flex flex-col gap-6 bg-stone">
-        <h1 className="text-4xl font-bold">Desserts</h1>
-        {cardElements}
-        {cartElement()}
+    <div className="bg-stone-100 p-6 font-text flex flex-col min-h-screen">
+      <h1 className="text-4xl font-bold mb-6">Desserts</h1>
+
+      <main className="flex flex-col lg:flex-row gap-6">
+        {/* Cards Section */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 flex-1">
+          {cardElements}
+        </div>
+
+        {/* Cart Section */}
+        <div className="mt-6 md:mt-0 lg:w-6/10">{cartElement()}</div>
       </main>
     </div>
   );
