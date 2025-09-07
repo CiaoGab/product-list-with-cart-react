@@ -17,17 +17,17 @@ function App() {
             alt={`image of ${item.name}`}
           />
           {isAdded ? (
-            <div className="max-w-[160px] mx-auto flex -m-3 bg-red-700 text-white rounded-full px-5 py-2 cursor-pointer border border-stone-500 justify-between w-full">
+            <div className=" mx-auto flex items-center max-w-[140px] -m-3 bg-red-700 text-white rounded-full px-4 py-2 cursor-pointer border border-stone-500 justify-between w-full text-sm lg:text-base">
               <button
                 onClick={() => decrement(isAdded)}
-                className="border border-white rounded-full h-6 w-6 flex justify-center items-center"
+                className="border border-white rounded-full h-5 w-5 lg:h-6 lg:w-6 flex justify-center items-center"
               >
                 -
               </button>
               <p>{isAdded.quantity}</p>
               <button
                 onClick={() => increment(isAdded)}
-                className="border border-white rounded-full h-6 w-6 flex justify-center items-center"
+                className="border border-white rounded-full h-5 w-5 lg:h-6 lg:w-6 flex justify-center items-center"
               >
                 +
               </button>
@@ -35,17 +35,21 @@ function App() {
           ) : (
             <button
               onClick={() => addToCart(item)}
-              className="max-w-[160px] mx-auto flex -m-3 bg-white rounded-full px-5 py-2 cursor-pointer border border-stone-500"
+              className=" mx-auto flex items-center justify-center gap-2 -m-3 bg-white rounded-full px-4 py-2 cursor-pointer border border-stone-500 text-sm lg:text-base"
             >
-              <span>
-                <img src="/images/icon-add-to-cart.svg" alt="" />
-              </span>
+              <img
+                src="/images/icon-add-to-cart.svg"
+                alt=""
+                className="w-4 lg:w-5"
+              />
               Add to Cart
             </button>
           )}
           <div className="mt-6">
-            <span className="text-orange-950 text-sm">{item.category}</span>
-            <h2 className="text-lg">{item.name}</h2>
+            <span className="text-orange-900 font-normal text-md">
+              {item.category}
+            </span>
+            <h2 className="text-lg text-pink-900 font-medium">{item.name}</h2>
             <p className="text-red-600 font-semibold text-lg">{`$${item.price.toFixed(
               2
             )}`}</p>
@@ -192,14 +196,14 @@ function App() {
   );
 
   return (
-    <div className="bg-stone-100 p-6 font-text flex flex-col min-h-screen">
+    <div className="bg-red-50 p-6 font-text flex flex-col min-h-screen">
       <h1 className="text-4xl font-bold mb-6">Desserts</h1>
 
-      <main className="flex flex-col md:flex-row gap-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 flex-1">
+      <main className="flex flex-col lg:flex-row gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 flex-1">
           {cardElements}
         </div>
-        <div className="mt-6 md:mt-0 md:w-1/3">{cartElement()}</div>
+        <div className="mt-6 lg:mt-0 lg:w-1/3">{cartElement()}</div>
       </main>
 
       {/* Modal */}
