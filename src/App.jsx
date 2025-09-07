@@ -38,7 +38,7 @@ function App() {
               className="max-w-[160px] mx-auto flex -m-3 bg-white rounded-full px-5 py-2 cursor-pointer border border-stone-500"
             >
               <span>
-                <img src="src/assets/images/icon-add-to-cart.svg" alt="" />
+                <img src="/images/icon-add-to-cart.svg" alt="" />
               </span>
               Add to Cart
             </button>
@@ -69,7 +69,7 @@ function App() {
           <div className="flex flex-col justify-center items-center p-4">
             <img
               className="w-32"
-              src="src/assets/images/illustration-empty-cart.svg"
+              src="/images/illustration-empty-cart.svg"
               alt="empty cart image"
             />
             <p className="mt-4">Your added items will appear here</p>
@@ -95,7 +95,7 @@ function App() {
               </div>
               <img
                 onClick={() => removeItem(item)}
-                src="src/assets/images/icon-remove-item.svg"
+                src="/images/icon-remove-item.svg"
                 alt="remove item"
                 className="cursor-pointer w-5 h-5 border border-red-900 rounded-full p-1"
               />
@@ -115,7 +115,7 @@ function App() {
             <p className="text-3xl font-bold">{`$${orderTotal.toFixed(2)}`}</p>
           </div>
           <div className="flex gap-2 justify-center bg-orange-50 py-3 px-1 w-full text-lg mx-auto rounded-md">
-            <img src="src/assets/images/icon-carbon-neutral.svg" alt="" />
+            <img src="/images/icon-carbon-neutral.svg" alt="" />
             <p>
               This is a <span className="font-semibold">carbon-neutral</span>{" "}
               delivery
@@ -208,7 +208,7 @@ function App() {
           <div className="bg-white rounded-lg p-6 max-w-lg w-full shadow-xl">
             <img
               className="mb-4"
-              src="src\assets\images\icon-order-confirmed.svg"
+              src="/images/icon-order-confirmed.svg"
               alt=""
             />
             <h2 className="text-2xl font-bold  mb-4">Order Confirmed</h2>
