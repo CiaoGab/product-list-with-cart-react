@@ -178,12 +178,12 @@ function App() {
   }
 
   function confirmOrder() {
-    setIsModalOpen(true); // show modal
+    setIsModalOpen(true);
   }
 
   function closeModal() {
     setIsModalOpen(false);
-    setCartItems([]); // optional: clear cart when closing modal
+    setCartItems([]);
   }
 
   const orderTotal = cartItems.reduce(
